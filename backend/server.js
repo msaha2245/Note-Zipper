@@ -2,9 +2,11 @@ const express = require("express");
 const notes = require("./Data/notes");
 const dotenv = require("dotenv");
 const { addAbortSignal } = require("stream");
+const connectDB = require("./config/db");
 
 const app = express();
 dotenv.config();
+connectDB();
 
 const PORT = process.env.PORT || 5000;
 
